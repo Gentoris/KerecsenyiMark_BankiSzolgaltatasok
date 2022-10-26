@@ -3,7 +3,9 @@ package hu.petrik.bankiszolgatatasok;
 public final class Tulajdonos {
 
     private String nev;
-    public String Tulajdonos;
+    public Tulajdonos(String nev){
+        this.nev = nev;
+    }
 
     public String getNev() {
         return nev;

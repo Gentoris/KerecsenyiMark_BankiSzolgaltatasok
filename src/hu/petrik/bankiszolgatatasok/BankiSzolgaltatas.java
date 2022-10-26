@@ -1,11 +1,14 @@
 package hu.petrik.bankiszolgatatasok;
 
-public class BankiSzolgaltatas {
+public abstract class BankiSzolgaltatas {
 
-private Tulajdonos tulajdonos;
+ Tulajdonos tulajdonos;
 
-public void BankiSzolgaltatas(Tulajdonos tulajdonos){
-
+public BankiSzolgaltatas(Tulajdonos tulajdonos){
+    this.tulajdonos = tulajdonos;
 }
 
+public Tulajdonos getTulajdonos(){
+    return tulajdonos;
+}
 }

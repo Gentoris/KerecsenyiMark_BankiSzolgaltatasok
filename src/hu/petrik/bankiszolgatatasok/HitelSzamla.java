@@ -1,6 +1,6 @@
 package hu.petrik.bankiszolgatatasok;
 
-public abstract class HitelSzamla extends Szamla {
+public class HitelSzamla extends Szamla {
 
     private int hitelKeret;
 
@@ -8,8 +8,19 @@ public abstract class HitelSzamla extends Szamla {
         return hitelKeret;
     }
 
-    public boolean kivesz(int osszeg){
+    public HitelSzamla(Tulajdonos tulajdonos, int hitelKeret){
+        super(tulajdonos);
+        this.hitelKeret = hitelKeret;
+    }
 
+    @Override
+    public boolean kivesz(int osszeg){
+        if (osszeg <= aktualisEgyenleg + hitelKeret){
+            aktualisEgyenleg -= osszeg;
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
